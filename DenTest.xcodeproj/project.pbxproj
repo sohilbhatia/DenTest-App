@@ -13,6 +13,7 @@
 		AAB1643225469BE90080C5BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB1643025469BE90080C5BC /* Main.storyboard */; };
 		AAB1643425469BEC0080C5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAB1643325469BEC0080C5BC /* Assets.xcassets */; };
 		AAB1643725469BEC0080C5BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB1643525469BEC0080C5BC /* LaunchScreen.storyboard */; };
+		AAFE4780254942D900DD57DC /* DenTestML 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AAFE477F254942D900DD57DC /* DenTestML 2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AAB1643325469BEC0080C5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAB1643625469BEC0080C5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAB1643825469BEC0080C5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAFE477F254942D900DD57DC /* DenTestML 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "DenTestML 2.mlmodel"; path = "../../DenTestModel_v2200.mlproj/Models/DenTestML 2.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				AAB1642A25469BE90080C5BC /* AppDelegate.swift */,
+				AAFE477F254942D900DD57DC /* DenTestML 2.mlmodel */,
 				AAB1642C25469BE90080C5BC /* SceneDelegate.swift */,
 				AAB1642E25469BE90080C5BC /* ViewController.swift */,
 				AAB1643025469BE90080C5BC /* Main.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB1642F25469BE90080C5BC /* ViewController.swift in Sources */,
+				AAFE4780254942D900DD57DC /* DenTestML 2.mlmodel in Sources */,
 				AAB1642B25469BE90080C5BC /* AppDelegate.swift in Sources */,
 				AAB1642D25469BE90080C5BC /* SceneDelegate.swift in Sources */,
 			);
@@ -285,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HLK8C3SR2N;
 				INFOPLIST_FILE = DenTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HLK8C3SR2N;
 				INFOPLIST_FILE = DenTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
