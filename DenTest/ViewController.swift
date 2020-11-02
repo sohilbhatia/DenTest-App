@@ -19,7 +19,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, VNDocume
         configureDocumentView()
     }
     
-    
+    //testing this commit
     @IBOutlet weak var analysisText: UILabel!
     @IBAction func uploadPhoto(_ sender: Any) {
         let vc = UIImagePickerController()
