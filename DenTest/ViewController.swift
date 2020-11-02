@@ -10,10 +10,15 @@ import UIKit
 import CoreML
 import Vision
 import ImageIO
+import VisionKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class ViewController: UIViewController, UINavigationControllerDelegate, VNDocumentCameraViewControllerDelegate {
 
     @IBOutlet weak var photoView: UIImageView!
+    @IBAction func touchCamera(_ sender: Any) {
+        configureDocumentView()
+    }
+    
     
     @IBOutlet weak var analysisText: UILabel!
     @IBAction func uploadPhoto(_ sender: Any) {
@@ -22,6 +27,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         vc.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
         present(vc, animated: true)
     }
+    
     lazy var detectionRequest: VNCoreMLRequest = {
         do {
             let model = try VNCoreMLModel(for: DenTestML_2().model)
@@ -90,6 +96,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             UIGraphicsEndImageContext()
         self.photoView.image = newImage
         }
+    func configureDocumentView() {
+            let scanningDocumentVC = VNDocumentCameraViewController()
+            scanningDocumentVC.delegate = self
+            self.present(scanningDocumentVC, animated: true, completion: nil)
+        }
+    
     }
 
 extension ViewController: UIImagePickerControllerDelegate {
@@ -102,6 +114,18 @@ extension ViewController: UIImagePickerControllerDelegate {
 
         self.photoView?.image = image
         updateDetections(for: image)
+    }
+}
+
+extension ViewController {
+    func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
+        for pageNumber in 0..<scan.pageCount{
+            let image = scan.imageOfPage(at: pageNumber)
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            self.photoView?.image = image
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
